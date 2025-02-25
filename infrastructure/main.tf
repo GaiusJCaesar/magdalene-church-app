@@ -21,6 +21,7 @@ provider "aws" {
     tags = {
       Service      = "Magdalene Church App"
       Service_Name = "magdalene-church-app"
+      Environment  = var.env
     }
   }
 }

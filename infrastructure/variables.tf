@@ -15,3 +15,7 @@ variable "state_bucket" {
   description = "Name of the state bucket"
   default = "my-aws-state-bucket"
 }
+
+variable "env" {
+  description = "Name of environment"
+}
