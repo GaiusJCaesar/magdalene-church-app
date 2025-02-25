@@ -29,6 +29,14 @@ jobs:
         run: cd out && ls
         working-directory: frontend
 
+      - name: Deploy to S3
+        run: |
+          aws s3 sync out/ s3://magdalene-church-bucket-prod --delete
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_DEFAULT_REGION: "eu-west-2"
+
   terraform:
     name: Terraform Deployment
     runs-on: ubuntu-latest
