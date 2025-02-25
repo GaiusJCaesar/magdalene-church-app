@@ -15,7 +15,7 @@ terraform {
 }
 
 provider "aws" {
-  region  = var.region
+  region = var.region
 
   default_tags {
     tags = {
@@ -27,5 +27,6 @@ provider "aws" {
 }
 
 module "frontend" {
-    source = "./modules/frontend"
+  source = "./modules/frontend"
+  env    = var.env
 }

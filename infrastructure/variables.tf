@@ -13,7 +13,7 @@ variable "runtime" {
 
 variable "state_bucket" {
   description = "Name of the state bucket"
-  default = "my-aws-state-bucket"
+  default     = "my-aws-state-bucket"
 }
 
 variable "env" {
