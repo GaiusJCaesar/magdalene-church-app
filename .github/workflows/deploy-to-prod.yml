@@ -32,7 +32,7 @@ jobs:
       - name: Deploy to S3
         working-directory: frontend
         run: |
-          aws s3 sync out/ s3://magdalene-church-bucket-prod --delete
+          aws s3 sync out/ s3://magdalene-church-prod --delete
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}

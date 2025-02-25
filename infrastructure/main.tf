@@ -28,5 +28,7 @@ provider "aws" {
 
 module "frontend" {
   source = "./modules/frontend"
+  region = var.region
   env    = var.env
+  s3_name = "magdalene-church-${var.env}"
 }
