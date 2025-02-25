@@ -1,10 +1,9 @@
 locals {
   s3_origin_id   = "${var.s3_name}-origin"
-  s3_domain_name = "${var.s3_name}.s3-website-${var.region}.amazonaws.com"
+  s3_domain_name = "${var.s3_name}.s3-website.${var.region}.amazonaws.com"
 }
 
-resource "aws_cloudfront_distribution" "this" {
-  
+resource "aws_cloudfront_distribution" "frontend_cloudfront" {
   enabled = true
   
   origin {
